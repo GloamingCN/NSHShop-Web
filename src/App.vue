@@ -4,45 +4,78 @@
       Header
     </a-layout-header>
     <a-layout>
-      <a-layout-sider collapsible breakpoint="xl">
+      <a-layout-sider collapsible breakpoint="xl" :style="{ width: '250px', height: '88vh' }">
         <div class="logo" />
-        <a-menu :default-open-keys="['1']" :default-selected-keys="['0_3']" :style="{ width: '100%' }"
+        <a-menu :default-open-keys="['1']" :default-selected-keys="['0_1']" :style="{ width: '100%'}"
           @menu-item-click="onClickMenuItem">
-          <a-menu-item key="0_1" disabled>
+          <a-menu-item key="0_1">
             <IconHome></IconHome>
-            Menu 1
+            主页
           </a-menu-item>
           <a-menu-item key="0_2">
             <IconCalendar></IconCalendar>
-            Menu 2
-          </a-menu-item>
-          <a-menu-item key="0_3">
-            <IconCalendar></IconCalendar>
-            Menu 3
+            全部类别
           </a-menu-item>
           <a-sub-menu key="1">
             <template #title>
-              <IconCalendar></IconCalendar> Navigation 1
+              <IconCalendar></IconCalendar> 装备
             </template>
-            <a-menu-item key="1_1">Menu 1</a-menu-item>
-            <a-menu-item key="1_2">Menu 2</a-menu-item>
-            <a-sub-menu key="2" title="Navigation 2">
-              <a-menu-item key="2_1">Menu 1</a-menu-item>
-              <a-menu-item key="2_2">Menu 2</a-menu-item>
+            <a-sub-menu key="2" title="腰带">
+              <a-sub-menu key="2_1" title="【白石神殿】赛季">
+                <a-menu-item key="2_1_1">凝霜带</a-menu-item>
+                <a-menu-item key="2_1_2">虎啸带</a-menu-item>
+                <a-menu-item key="2_1_3">残云带</a-menu-item>
+              </a-sub-menu>
+              <a-sub-menu key="2_2" title="【决战舞阳】赛季">
+                <a-menu-item key="2_2_1">醉仙带</a-menu-item>
+                <a-menu-item key="2_2_2">火药库宝带</a-menu-item>
+                <a-menu-item key="2_2_3">燃烧带</a-menu-item>
+                <a-menu-item key="2_2_4">血纹带</a-menu-item>
+                <a-menu-item key="2_2_5">黑魔带</a-menu-item>
+              </a-sub-menu>
             </a-sub-menu>
-            <a-sub-menu key="3" title="Navigation 3">
-              <a-menu-item key="3_1">Menu 1</a-menu-item>
-              <a-menu-item key="3_2">Menu 2</a-menu-item>
-              <a-menu-item key="3_3">Menu 3</a-menu-item>
+            <a-sub-menu key="3" title="鞋子">
+              <a-sub-menu key="3_1" title="【白石神殿】赛季">
+                <a-menu-item key="3_1_1">万毒履</a-menu-item>
+                <a-menu-item key="3_1_2">霜落履</a-menu-item>
+                <a-menu-item key="3_1_3">月影履</a-menu-item>
+              </a-sub-menu>
+              <a-sub-menu key="3_2" title="【决战舞阳】赛季">
+                <a-menu-item key="3_2_1">飞云履</a-menu-item>
+                <a-menu-item key="3_2_2">透支履</a-menu-item>
+                <a-menu-item key="3_2_3">温柔履</a-menu-item>
+                <a-menu-item key="3_2_4">寒冰履</a-menu-item>
+                <a-menu-item key="3_2_5">雪灵履</a-menu-item>
+              </a-sub-menu>
             </a-sub-menu>
-          </a-sub-menu>
-          <a-sub-menu key="4">
-            <template #title>
-              <IconCalendar></IconCalendar> Navigation 4
-            </template>
-            <a-menu-item key="4_1">Menu 1</a-menu-item>
-            <a-menu-item key="4_2">Menu 2</a-menu-item>
-            <a-menu-item key="4_3">Menu 3</a-menu-item>
+            <a-sub-menu key="4" title="装备匣">
+              <a-sub-menu key="4_1" title="【江湖重启】赛季">
+                <a-menu-item key="4_1_1">传世神武令宝箱</a-menu-item>
+                <a-menu-item key="4_1_2">侠骨神兵匣·护腕</a-menu-item>
+                <a-menu-item key="4_1_3">侠骨神兵匣·武器</a-menu-item>
+                <a-menu-item key="4_1_4">忘虚装备匣</a-menu-item>
+                <a-menu-item key="4_1_5">逸尘装备匣</a-menu-item>
+                <a-menu-item key="4_1_6">风语装备匣</a-menu-item>
+                <a-menu-item key="4_1_7">楚歌装备匣</a-menu-item>
+                <a-menu-item key="4_1_8">重渊装备匣</a-menu-item>
+                <a-menu-item key="4_1_9">修罗装备匣</a-menu-item>
+                <a-menu-item key="4_1_10">蜃楼装备匣</a-menu-item>
+                <a-menu-item key="4_1_11">玉京装备匣</a-menu-item>
+              </a-sub-menu>
+              <a-sub-menu key="4_2" title="【白石神殿】赛季">
+                <a-menu-item key="4_2_1">挽云装备匣</a-menu-item>
+                <a-menu-item key="4_2_2">太虚装备匣</a-menu-item>
+                <a-menu-item key="4_2_3">仙陵装备匣</a-menu-item>
+              </a-sub-menu>
+              <a-sub-menu key="4_3" title="【决战舞阳】赛季">
+                <a-menu-item key="4_3_1">30级紫色装备匣</a-menu-item>
+                <a-menu-item key="4_3_2">40级紫色装备匣</a-menu-item>
+                <a-menu-item key="4_3_3">50级紫色装备匣</a-menu-item>
+                <a-menu-item key="4_3_4">60级紫色装备匣</a-menu-item>
+                <a-menu-item key="4_3_5">凤舞装备匣</a-menu-item>
+                <a-menu-item key="4_3_6">天魔装备匣</a-menu-item>
+              </a-sub-menu>
+            </a-sub-menu>
           </a-sub-menu>
         </a-menu>
         <!-- trigger -->
@@ -82,10 +115,10 @@ export default defineComponent({
 });
 </script>
 <style scoped>
+
 .layout-a {
   height: 100vh;
   background: var(--color-fill-2);
-  border: 1px solid var(--color-border);
 }
 
 .layout-a :deep(.arco-layout-sider) .logo {
