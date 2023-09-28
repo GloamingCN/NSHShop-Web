@@ -4,14 +4,16 @@
       Header
     </a-layout-header>
     <a-layout>
-      <a-layout-sider collapsible breakpoint="xl" :style="{ width: '250px', height: '88vh' }">
+      <a-layout-sider collapsible breakpoint="xl" :width="250">
         <div class="logo" />
-        <a-menu :default-open-keys="['1']" :default-selected-keys="['0_1']" :style="{ width: '100%'}"
+        <a-menu :default-open-keys="['1']" :default-selected-keys="['0_1']" :style="{ width: '100%' }"
           @menu-item-click="onClickMenuItem">
-          <a-menu-item key="0_1">
-            <IconHome></IconHome>
-            主页
-          </a-menu-item>
+          <RouterLink to="/">
+            <a-menu-item key="0_1">
+              <IconHome></IconHome>
+              主页
+            </a-menu-item>
+          </RouterLink>
           <a-menu-item key="0_2">
             <IconCalendar></IconCalendar>
             全部类别
@@ -21,18 +23,20 @@
               <IconCalendar></IconCalendar> 装备
             </template>
             <a-sub-menu key="2" title="腰带">
-              <a-sub-menu key="2_1" title="【白石神殿】赛季">
-                <a-menu-item key="2_1_1">凝霜带</a-menu-item>
+              <a-menu-item key="2_1">【白石神殿】赛季</a-menu-item>
+              <!-- <a-sub-menu key="2_1" title="【白石神殿】赛季">
+                <RouterLink to="/yaodai"><a-menu-item key="2_1_1">凝霜带</a-menu-item></RouterLink>
                 <a-menu-item key="2_1_2">虎啸带</a-menu-item>
                 <a-menu-item key="2_1_3">残云带</a-menu-item>
-              </a-sub-menu>
-              <a-sub-menu key="2_2" title="【决战舞阳】赛季">
+              </a-sub-menu> -->
+              <a-menu-item key="2_2">【决战舞阳】赛季</a-menu-item>
+              <!-- <a-sub-menu key="2_2" title="【决战舞阳】赛季">
                 <a-menu-item key="2_2_1">醉仙带</a-menu-item>
                 <a-menu-item key="2_2_2">火药库宝带</a-menu-item>
                 <a-menu-item key="2_2_3">燃烧带</a-menu-item>
                 <a-menu-item key="2_2_4">血纹带</a-menu-item>
                 <a-menu-item key="2_2_5">黑魔带</a-menu-item>
-              </a-sub-menu>
+              </a-sub-menu> -->
             </a-sub-menu>
             <a-sub-menu key="3" title="鞋子">
               <a-sub-menu key="3_1" title="【白石神殿】赛季">
@@ -90,7 +94,7 @@
   </a-layout>
 </template>
 <script>
-import { RouterView } from 'vue-router';
+import { RouterLink, RouterView } from 'vue-router';
 import { defineComponent } from 'vue';
 import { Message } from '@arco-design/web-vue';
 import {
@@ -115,7 +119,6 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-
 .layout-a {
   height: 100vh;
   background: var(--color-fill-2);
@@ -143,17 +146,6 @@ export default defineComponent({
   font-weight: 400;
   font-size: 14px;
   line-height: 48px;
-}
-
-.layout-a :deep(.arco-layout-content) {
-  color: var(--color-text-2);
-  font-weight: 400;
-  font-size: 14px;
-  background: var(--color-bg-3);
-}
-
-.layout-a :deep(.arco-layout-footer),
-.layout-a :deep(.arco-layout-content) {
   display: flex;
   flex-direction: column;
   justify-content: center;
